@@ -30,6 +30,53 @@
   letter-spacing: 1px;
 }
 
+.about-me .title {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.education-section,
+.skills-section {
+  margin-top: 40px;
+}
+
+.education-item {
+  margin-bottom: 20px;
+}
+
+.education-item h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accentColor);
+  margin-bottom: 5px;
+}
+
+.education-item p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.skill-category {
+  margin-bottom: 15px;
+}
+
+.skill-category h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--accentColor);
+  margin-bottom: 5px;
+  display: inline;
+}
+
+.skill-category p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  display: inline;
+  margin-left: 10px;
+}
+
 @media only screen and (min-width: 600px) {
   .about-section {
     justify-content: center;
@@ -50,8 +97,9 @@
     width: var(--cWidth);
     justify-content: right;
     max-width: 1920px;
-    height: var(--vh);
-    padding: 0px;
+    height: auto;
+    min-height: var(--vh);
+    padding: 50px 0;
     opacity: 1;
   }
   .about-me {
@@ -62,9 +110,18 @@
     font-size: 1.9vw;
     line-height: 2.3vw;
   }
+  .about-me .para {
+    font-size: 1.9vw;
+    line-height: 2.3vw;
+  }
+  .education-item p,
+  .skill-category p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 @media only screen and (min-width: 1950px) {
-  .about-me p {
+  .about-me .para {
     font-size: 2.5rem;
     line-height: 2.7rem;
   }

@@ -129,12 +129,14 @@ const TechStack = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
+      const techstackSection = document.getElementById("techstack");
+      if (!techstackSection) return;
+      
+      const rect = techstackSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      setIsActive(isVisible);
     };
+    
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
       element.addEventListener("click", () => {
@@ -146,7 +148,10 @@ const TechStack = () => {
         }, 1000);
       });
     });
+    
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -167,7 +172,7 @@ const TechStack = () => {
   }, []);
 
   return (
-    <div className="techstack">
+    <div className="techstack" id="techstack">
       <h2> My Techstack</h2>
 
       <Canvas
@@ -176,6 +181,7 @@ const TechStack = () => {
         camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
         onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
         className="tech-canvas"
+        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
       >
         <ambientLight intensity={1} />
         <spotLight

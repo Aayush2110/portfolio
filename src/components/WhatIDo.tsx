@@ -88,23 +88,25 @@ const WhatIDo = () => {
 
             <div className="what-content-in">
               <h3>DEVELOP</h3>
-              <h4>Description</h4>
+              <h4>Full Stack & Web Development</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae.
+                Building scalable web applications and REST APIs with modern frameworks,
+                focusing on system reliability, performance, and user experience.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">JavaScript</div>
                 <div className="what-tags">TypeScript</div>
-                <div className="what-tags">Three.js</div>
                 <div className="what-tags">React</div>
-                <div className="what-tags">Css</div>
                 <div className="what-tags">Node.js</div>
-                <div className="what-tags">Next.js</div>
+                <div className="what-tags">FastAPI</div>
                 <div className="what-tags">Express.js</div>
-                <div className="what-tags">PHP</div>
-                <div className="what-tags">MySql</div>
+                <div className="what-tags">REST APIs</div>
+                <div className="what-tags">MongoDB</div>
+                <div className="what-tags">MySQL</div>
+                <div className="what-tags">Git</div>
+                <div className="what-tags">AWS</div>
+                <div className="what-tags">Firebase</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -128,22 +130,24 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>DESIGN</h3>
-              <h4>Description</h4>
+              <h3>AI ENGINEERING</h3>
+              <h4>Intelligent Systems & Automation</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                quia aliquid laboriosam ducimus sit molestiae
+                Integrating Generative AI and LLM-based features into production applications,
+                building RAG systems, and developing intelligent workflow automation solutions.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Blender</div>
-                <div className="what-tags">Zbrush</div>
-                <div className="what-tags">UI Design</div>
-                <div className="what-tags">Motion</div>
-                <div className="what-tags">Rigging</div>
-                <div className="what-tags">3D Animation</div>
-                <div className="what-tags">Character Design</div>
-                <div className="what-tags">Modelling</div>
+                <div className="what-tags">Python</div>
+                <div className="what-tags">RAG Systems</div>
+                <div className="what-tags">LLM Integration</div>
+                <div className="what-tags">OpenAI API</div>
+                <div className="what-tags">ChromaDB</div>
+                <div className="what-tags">Vector Embeddings</div>
+                <div className="what-tags">Prompt Engineering</div>
+                <div className="what-tags">Computer Vision</div>
+                <div className="what-tags">Time-series Analysis</div>
+                <div className="what-tags">Edge AI</div>
               </div>
               <div className="what-arrow"></div>
             </div>

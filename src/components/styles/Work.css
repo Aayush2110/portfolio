@@ -85,6 +85,18 @@
 .work-info > p {
   width: 90%;
 }
+.work-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 10px 0;
+  color: #adacac;
+}
+.work-info li {
+  font-weight: 200;
+  font-size: 14px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
 .work-image {
   display: flex;
   width: 100%;
