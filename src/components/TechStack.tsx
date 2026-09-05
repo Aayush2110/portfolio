@@ -124,10 +124,14 @@ function Pointer({ vec = new THREE.Vector3(), isActive }: PointerProps) {
   );
 }
 
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const TechStack = () => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
+    ScrollTrigger.refresh();
+
     const handleScroll = () => {
       const techstackSection = document.getElementById("techstack");
       if (!techstackSection) return;

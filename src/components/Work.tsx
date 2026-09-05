@@ -4,48 +4,54 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const Work = () => {
   useGSAP(() => {
-  let translateX: number = 0;
+    function getTranslateX() {
+      const workFlex = document.querySelector(".work-flex") as HTMLElement;
+      const workContainer = document.querySelector(".work-container") as HTMLElement;
+      if (!workFlex || !workContainer) return 0;
+      
+      const boxes = workFlex.querySelectorAll(".work-box");
+      if (!boxes.length) return 0;
 
-  function setTranslateX() {
-    const box = document.getElementsByClassName("work-box");
-    const rectLeft = document
-      .querySelector(".work-container")!
-      .getBoundingClientRect().left;
-    const rect = box[0].getBoundingClientRect();
-    const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
-    let padding: number =
-      parseInt(window.getComputedStyle(box[0]).padding) / 2;
-    translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
-  }
+      let totalBoxesWidth = 0;
+      boxes.forEach((box) => {
+        totalBoxesWidth += (box as HTMLElement).offsetWidth;
+      });
 
-  setTranslateX();
+      const containerWidth = workContainer.clientWidth;
+      return Math.max(0, totalBoxesWidth - containerWidth);
+    }
 
-  let timeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".work-section",
-      start: "top top",
-      end: `+=${translateX}`, // Use actual scroll width
-      scrub: true,
-      pin: true,
-      id: "work",
-    },
-  });
+    let timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".work-section",
+        start: "top top",
+        end: () => `+=${getTranslateX()}`,
+        scrub: true,
+        pin: true,
+        pinType: "transform",
+        id: "work",
+        invalidateOnRefresh: true,
+      },
+    });
 
-  timeline.to(".work-flex", {
-    x: -translateX,
-    ease: "none",
-  });
+    timeline.to(".work-flex", {
+      x: () => -getTranslateX(),
+      ease: "none",
+    });
 
-  // Clean up (optional, good practice)
-  return () => {
-    timeline.kill();
-    ScrollTrigger.getById("work")?.kill();
-  };
-}, []);
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    return () => {
+      timeline.kill();
+      ScrollTrigger.getById("work")?.kill();
+    };
+  }, []);
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
