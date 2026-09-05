@@ -122,7 +122,11 @@ const Work = () => {
                 <li>Built predictive maintenance models using time-series data to reduce downtime and enhance efficiency.</li>
               </ul>
             </div>
-            <WorkImage image="/images/placeholder.webp" alt="Edge AI Smart Factory Assistant" />
+            <img
+  src="/EdgeAI.png"
+  alt="EdgeAI Project"
+  style={{ width: "100%", height: "auto" }}
+/>
           </div>
         </div>
       </div>
