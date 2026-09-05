@@ -76,7 +76,11 @@ const Work = () => {
                 <li>Implemented semantic search, vector embeddings, document upload, and persistent chat history.</li>
               </ul>
             </div>
-            <WorkImage image="/images/placeholder.webp" alt="LexiAI Project" />
+            <img
+  src="/lexiAI.png"
+  alt="LexiAI Project"
+  style={{ width: "100%", height: "auto" }}
+/>
           </div>
           <div className="work-box">
             <div className="work-info">
@@ -95,7 +99,11 @@ const Work = () => {
                 <li>Built AI-driven automated interview module, video conferencing, and job application tracking system.</li>
               </ul>
             </div>
-            <WorkImage image="/images/placeholder.webp" alt="NexTribe Project" />
+            <img
+  src="/Nextibe.png"
+  alt="NexTribe Project"
+  style={{ width: "100%", height: "auto" }}
+/>
           </div>
           <div className="work-box">
             <div className="work-info">
